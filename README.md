@@ -1,6 +1,6 @@
 # Reading a CSV file and generating a SQL Script with pandas
 
-## Main goal of the script
+## Goal
 This script was created to automate a quite simple task:
 Read an specific column of a CSV file and create a SQL script using its data.
 
