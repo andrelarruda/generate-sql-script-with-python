@@ -3,10 +3,9 @@ import sys
 
 try:
     instance_names = []
-    dataframe = pd.read_csv(
-        'file_name.csv', sep=';', encoding='utf8')
+    dataframe = pd.read_csv('filename.csv', sep=';', encoding='latin-1') # It might be 'latin-1' or 'utf-8'
     result_file = open(r"result.sql", "w")
-    for instance in dataframe['column_name']:
+    for instance in dataframe['Instância']:
         result_file.writelines(
             "EXEC DropInstanceBySubdomain " + "'" + instance + "'\n")
     print('The script was generated successfully.')
