@@ -3,11 +3,13 @@ import sys
 
 try:
     instance_names = []
-    dataframe = pd.read_csv('filename.csv', sep=';', encoding='latin-1') # It might be 'latin-1' or 'utf-8'
+    dataframe = pd.read_csv(
+        './InstanciasCandidatasParaExclusao.csv', sep=';',
+        encoding='latin-1')  # It might be 'latin-1' or 'utf-8'
     result_file = open(r"result.sql", "w")
-    for instance in dataframe['Instância']:
-        result_file.writelines(
-            "EXEC DropInstanceBySubdomain " + "'" + instance + "'\n")
+    for instance in dataframe['Instancia']:
+        result_file.writelines("EXEC DropInstanceBySubdomain " + "'" +
+                               instance + "'\n")
     print('The script was generated successfully.')
 except:
     print('Something went wrong.')
